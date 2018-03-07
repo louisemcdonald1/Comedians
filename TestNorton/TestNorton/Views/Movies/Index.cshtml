@@ -1,0 +1,96 @@
+﻿@model IEnumerable<TestNorton.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="container">
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <div class="table table-responsive">
+        @*set up table header row*@
+        <div class="row trow">
+            <div class="cell col-xs-2">
+                @Html.DisplayNameFor(model => model.Title)
+            </div>
+            <div class="cell col-xs-2">
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </div>
+            <div class="cell col-xs-1">
+                @Html.DisplayNameFor(model => model.Genre)
+            </div>
+            <div class="cell col-xs-1">
+                @Html.DisplayNameFor(model => model.Price)
+            </div>
+            <div class="cell col-xs-1">
+                @Html.DisplayNameFor(model => model.Likes)
+            </div>
+            <div class="cell col-xs-1">
+                @Html.DisplayNameFor(model => model.Dislikes)
+            </div>
+            
+
+        </div> @*end row*@
+        @*do data rows in table*@
+        @foreach (var item in Model)
+        {
+            @Html.Action("_TableRow", new { id = item.Id })
+        }
+
+    </div>@*end table*@
+</div>
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Likes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dislikes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Likes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dislikes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>*@

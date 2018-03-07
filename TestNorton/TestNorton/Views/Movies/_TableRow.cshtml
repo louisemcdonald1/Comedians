@@ -1,0 +1,76 @@
+﻿@model TestNorton.Models.Movie
+
+@*@using (Ajax.BeginForm(
+                                                                actionName: "_TableRow",
+                                                                controllerName: "Movies",
+                                                                routeValues: new { id = Model.Id },
+                                                                ajaxOptions: new AjaxOptions
+                                                                {
+                                                                    HttpMethod = "Post",
+                                                                    OnSuccess = "Success"
+                                                                },
+                                                                htmlAttributes: new { @class = "trow" }
+                                                        ))
+    {*@
+<div class="row trow">
+    <div class="cell col-xs-2">
+        @Html.DisplayFor(modelItem => Model.Title)
+    </div>
+    <div class="cell col-xs-2">
+        @Html.DisplayFor(modelItem => Model.ReleaseDate)
+    </div>
+    <div class="cell col-xs-1">
+        @Html.DisplayFor(modelItem => Model.Genre)
+    </div>
+    <div class="cell col-xs-1">
+        @Html.DisplayFor(modelItem => Model.Price)
+    </div>
+    <div class="cell col-xs-1">
+        <i class="icon-thumbs-up"></i>
+        @Html.DisplayFor(modelItem => Model.Likes)
+    </div>
+    <div class="cell col-xs-1">
+        <i class="icon-thumbs-down"></i>
+        @Html.DisplayFor(modelItem => Model.Dislikes)
+    </div>
+    <div class="cell col-xs-1">
+        @using (Ajax.BeginForm(
+                                actionName: "_Like",
+                                controllerName: "Movies",
+                                routeValues: new { id = Model.Id },
+                                ajaxOptions: new AjaxOptions
+                                {
+                                    HttpMethod = "Post",
+                                    OnSuccess = "Success"
+                                },
+                                htmlAttributes: new { @class = "trow" }
+                        ))
+        {
+            <input type="submit" value="Like" />
+        }
+    </div>
+    <div class="cell col-xs-1">
+        @using (Ajax.BeginForm(
+                                actionName: "_Dislike",
+                                controllerName: "Movies",
+                                routeValues: new { id = Model.Id },
+                                ajaxOptions: new AjaxOptions
+                                {
+                                    HttpMethod = "Post",
+                                    OnSuccess = "Success"
+                                },
+                                htmlAttributes: new { @class = "trow" }
+                        ))
+        {
+            <input type="submit" value="Dislike" />
+        }
+    </div>
+    <div class="cell col-xs-2">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+    </div>
+</div> @*end row*@
+@*}*@ @*end form*@
+@*<script type="text/javascript" src="/js/maintainscroll.jquery.min.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/maintainscroll.jquery.min.js"></script>*@
