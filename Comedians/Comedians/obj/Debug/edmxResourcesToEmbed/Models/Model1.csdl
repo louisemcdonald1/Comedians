@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ComedyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Performer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Genre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CountryOfOrigin" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="YearsActive" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Biography" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PictureUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VideoUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Likes" Type="Int32" />
+    <Property Name="Dislikes" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="ComedyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Performers" EntityType="Self.Performer" />
+  </EntityContainer>
+</Schema>

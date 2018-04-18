@@ -1,0 +1,61 @@
+﻿@model Comedians.Models.Performer
+
+<tr id="@Model.Id" >
+    <td class="noCellFlicker">
+        <a href="@Url.Action("Details", new {id = Model.Id })">
+            <img src="@Url.Content(Model.PictureUrl)" height="100" />
+        </a>
+    </td>
+
+    <td class="noCellFlicker">
+        <a href="@Url.Action("Details", new {id = Model.Id })">
+            @Html.DisplayFor(modelItem => Model.Name)
+        </a>
+        
+    </td>
+    <td class="noCellFlicker">
+        @Html.DisplayFor(modelItem => Model.Genre)
+    </td>
+    <td class="noCellFlicker">
+        @Html.DisplayFor(modelItem => Model.Likes)
+    </td>
+    <td class="noCellFlicker">
+        @Html.DisplayFor(modelItem => Model.Dislikes)
+    </td>
+    <td class="noCellFlicker">
+        @using (Ajax.BeginForm(
+                                actionName: "_Like",
+                                controllerName: "Home",
+                                routeValues: new { id = Model.Id },
+                                ajaxOptions: new AjaxOptions
+                                {
+                                    UpdateTargetId = Model.Id.ToString(),
+                                    InsertionMode = InsertionMode.ReplaceWith
+                                }
+                        ))
+        {
+            <input id="likeButton" type="submit" value="Like" />
+        }
+    </td>
+    <td class="noCellFlicker">
+        @using (Ajax.BeginForm(
+                                    actionName: "_Dislike",
+                                    controllerName: "Home",
+                                    routeValues: new { id = Model.Id },
+                                    ajaxOptions: new AjaxOptions
+                                    {
+                                        UpdateTargetId = Model.Id.ToString(),
+                                        InsertionMode = InsertionMode.ReplaceWith
+                                    }                                            
+                            ))
+        {
+            <input type="submit" value="Dislike" />
+        }
+    </td>
+    @*<td>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+    </td>*@
+</tr>
+

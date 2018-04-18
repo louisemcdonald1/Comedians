@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Comedians.Models.Performer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Who's your favourite comedian?</h2>
+
+@Html.ActionLink("Create", "Create")
+
+<table class="table">
+    <thead></thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @Html.Action("_TableRow", new { id = item.Id })
+        }
+    </tbody>
+
+</table>
+
