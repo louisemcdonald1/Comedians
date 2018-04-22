@@ -19,11 +19,10 @@ p {
 	table { 
 		width: 100%; 
 		border-collapse: collapse; 
+        /*padding: 1%;
+        margin: 2%;*/
 	}
-	/* Zebra striping */
-	tr:nth-of-type(odd) { 
-		background: #eee; 
-	}
+	
 	th { 
 		/*background: #333;*/ 
 		/*color: white;*/ 
@@ -33,7 +32,7 @@ p {
 	}
 	td, th { 
 		padding: 6px; 
-		border: 1px solid #ccc; 
+		border-bottom: 1px solid #ccc;
 		text-align: left; 
 	}
 
@@ -72,6 +71,11 @@ p {
 			padding-left: 50%; 
 		}
 		
+        /* Zebra striping */
+	tr:nth-of-type(odd) { 
+		background: #eee; 
+	}
+
 		td:before { 
 			/* Now like a table header */
 			position: absolute;

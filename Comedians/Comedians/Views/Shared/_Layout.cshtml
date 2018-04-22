@@ -7,17 +7,22 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @*added CSS links*@
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  @*stylesheet for modal*@
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/responsive.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
     @*added JS and jQ, including AJAX*@
-    @*<script src="~/Scripts/jquery-3.3.1.min.js"></script>*@
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    @*favicon link*@
+    @*<link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon">*@
+    <link rel="shortcut icon" type="image/ico" href="@Url.Content("~/favicon.ico")">
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -35,12 +40,15 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div>*@
     <div class="container body-content">
+        <br/>
+        <h2 class="headingWrapper text-center">Who's your favourite comedian?</h2>
+
         @RenderBody()
         <hr />
-        <footer>
-            <p>Disclaimer:  Some of the material on this site may upset your grandma, so please don't let her use the site unsupervised.  If you're as sensitive as your grandma, then <a href="https://www.thesprucecrafts.com/how-to-crochet-for-beginners-979092">here's</a> a link to a nice website about crocheting.  You'll probably enjoy it much more than this site. </p>
+        <footer class="labelText">
+            <p>Disclaimer:  Some of the material on this site may upset your grandma, so please don't let her use the site unsupervised.  If you're as sensitive as your grandma, then <a href="https://www.thesprucecrafts.com/how-to-crochet-for-beginners-979092" class="links">here's</a> a link to a nice website about crocheting.  You'll probably enjoy it much more than this site. </p>
             <p>&copy; @DateTime.Now.Year - Demonstration website by Louise McDonald</p>
         </footer>
     </div>

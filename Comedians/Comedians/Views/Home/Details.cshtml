@@ -3,101 +3,105 @@
 @{
     ViewBag.Title = "Details";
 }
+<div class="views">
+    <h3>Details</h3>
+    <div>
+        <hr />
+        <div class="col-xs-6">
+            <dl class="dl-horizontal">
+                @*<dt>       
+                </dt>
+                <dd>
+                    
+                    <img src="@Url.Content(Model.PictureUrl)" height="150" />
+                </dd>*@
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
 
-<h2>Details</h2>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
 
-<div>
-    <h4>Movie</h4>
-    <hr />
-    <div class="col-xs-6">
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Genre)
+                </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Genre)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Genre)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.CountryOfOrigin)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.CountryOfOrigin)
+                </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.Genre)
-            </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.YearsActive)
+                </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.CountryOfOrigin)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.CountryOfOrigin)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.YearsActive)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.YearsActive)
-            </dt>
+                
+                @*picture URL left out because any without spaces or question marks overshoot the column*@
+                @*<dt>
+                        @Html.DisplayNameFor(model => model.PictureUrl)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.PictureUrl)
+                    </dd>*@
 
-            <dd>
-                @Html.DisplayFor(model => model.YearsActive)
-            </dd>
+                
+                @*video URL left out because any without spaces or question marks overshoot the column*@
+                @*<dt>
+                    @*<dt>
+                        @Html.DisplayNameFor(model => model.VideoUrl)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.VideoUrl)
+                    </dd>*@
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Biography)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Biography)
-            </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Likes)
+                </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.PictureUrl)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.PictureUrl)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Likes)
+                </dd>
 
-            <dt>
-                Picture
-            </dt>
-            <dd>
-                <img src="@Url.Content(Model.PictureUrl)" height="100" />
-            </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Dislikes)
+                </dt>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.VideoUrl)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.VideoUrl)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Dislikes)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Biography)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Biography)
+                </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Likes)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Likes)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Dislikes)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Dislikes)
-            </dd>
-        </dl>
+            </dl>
+            <p>
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" }) |
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-default" })
+            </p>
+        </div>
+        <div class="col-xs-6">
+            @*embeds video if link with YouTube embed code is supplied*@
+            <iframe width="420" height="315" src="@Model.VideoUrl"></iframe>
+        </div>
+        @*div needed, otherwise hr is in top right corner with no height or width*@
+        <div class="col-xs-12 rule">
+            <hr />
+        </div>
     </div>
-    <div class="col-xs-6">
 
-        <iframe width="420" height="315" src="@Model.VideoUrl"></iframe>
-
-    </div>
 </div>
-<p>
-    
-    @Html.ActionLink("Back to List", "Index") |
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
-</p>
-
-

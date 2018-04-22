@@ -1,21 +1,40 @@
 ﻿@model IEnumerable<Comedians.Models.Performer>
 
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Comedians";
 }
 
-<h2>Who's your favourite comedian?</h2>
 
-@Html.ActionLink("Create", "Create")
 
-<table class="table">
-    <thead></thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            @Html.Action("_TableRow", new { id = item.Id })
-        }
-    </tbody>
 
-</table>
 
+<br />
+<div class="wrapper text-center">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <p>
+            @Html.ActionLink("Add your Favourite", "Create", null, new { @class = "btn btn-default" })
+
+            <span class="labelText">Genre:</span> @Html.DropDownList("Genres", "All")
+            <span class="labelText">Name:</span> @Html.TextBox("searchString")
+            <input type="submit" value="Choose your favourite" class="btn btn-default" />
+
+            @Html.ActionLink("Sort by Name", "Index", new { sortOrder = ViewBag.NameSortParameter }, new { @class = "btn btn-default" })
+            @Html.ActionLink("Sort by Likes", "Index", new { sortOrder = ViewBag.LikesSortParameter }, new { @class = "btn btn-default" })
+        </p>
+    }
+</div>
+<div class="main">
+    <table>
+        <thead></thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                @Html.Action("_TableRow", new { id = item.Id })
+            }
+
+        </tbody>
+
+    </table>
+</div>

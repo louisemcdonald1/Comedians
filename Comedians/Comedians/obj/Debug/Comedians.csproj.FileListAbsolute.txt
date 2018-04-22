@@ -42,3 +42,7 @@ E:\MyCode\GitHub\Comedians\Comedians\Comedians\bin\Newtonsoft.Json.xml
 E:\MyCode\GitHub\Comedians\Comedians\Comedians\obj\Debug\Comedians.csprojResolveAssemblyReference.cache
 E:\MyCode\GitHub\Comedians\Comedians\Comedians\obj\Debug\Comedians.dll
 E:\MyCode\GitHub\Comedians\Comedians\Comedians\obj\Debug\Comedians.pdb
+E:\MyCode\GitHub\Comedians\Comedians\Comedians\bin\PagedList.dll
+E:\MyCode\GitHub\Comedians\Comedians\Comedians\bin\PagedList.Mvc.dll
+E:\MyCode\GitHub\Comedians\Comedians\Comedians\bin\PagedList.xml
+E:\MyCode\GitHub\Comedians\Comedians\Comedians\bin\PagedList.Mvc.xml

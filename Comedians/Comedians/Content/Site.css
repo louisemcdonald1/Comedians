@@ -1,12 +1,27 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿/*part of the fix to stop the background gradient repeating. (Also see body selector below.)  
+May not be needed in Chrome - not sure about other browsers*/ 
+html
+{
+    height: 100%;
+}
+
+body {
+    /*padding-top: 50px;
+    padding-bottom: 20px;*/
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /*fix to stop background gradient repeating (also see html selector above) */
+    /*source: https://stackoverflow.com/questions/2869212/css3-gradient-background-set-on-body-doesnt-stretch-but-instead-repeats */
+    background: linear-gradient(purple, #3333cc);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -26,9 +41,69 @@ textarea {
 /*********************************************************************************
     My CSS
 **********************************************************************************/
-
-.noCellFlicker
+.main
 {
-    min-height: 500px;
+    background-color: white;
+    max-width: 950px;
+    margin: auto;
 }
 
+h2
+{
+    font-size: 4em;
+    color: white;
+    font-family: Broadway, 'Curlz MT', serif;
+}
+
+.labelText
+{
+    color: white;
+}
+
+.wrapper
+{
+    margin: auto;
+    max-width: 1050px;
+}
+
+.headingWrapper
+{
+    margin: auto;
+    max-width: 1050px;
+}
+
+.views
+{
+    min-height: 100%;
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.links
+{
+    color: lightblue;
+}
+.links:hover
+{
+    color: white;
+}
+
+.rule
+{
+    margin-left: -1%;
+}
+
+footer
+{
+    display: inline-block;
+}
+
+/*overrides Bootstrap class so that I can put help buttons next to the URL input fields*/
+.form-control {
+  display: inline;
+}
+
+.modalStyle
+{
+    padding: 5%;
+}

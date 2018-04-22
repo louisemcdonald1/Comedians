@@ -9,9 +9,15 @@
 
 namespace Comedians.Models
 {
+    using Metadata;
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
+    //metadata partial class created so data annotations are retained
+    //if the database is updated
+
+    [MetadataType(typeof(PerformerMetadata))]
     public partial class Performer
     {
         public int Id { get; set; }

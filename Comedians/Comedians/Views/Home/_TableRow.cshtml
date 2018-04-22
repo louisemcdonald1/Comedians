@@ -1,28 +1,31 @@
 ﻿@model Comedians.Models.Performer
 
 <tr id="@Model.Id" >
-    <td class="noCellFlicker">
+    <td class="col-xs-1 text-center">
         <a href="@Url.Action("Details", new {id = Model.Id })">
             <img src="@Url.Content(Model.PictureUrl)" height="100" />
         </a>
     </td>
 
-    <td class="noCellFlicker">
+    <td class="col-xs-1">
         <a href="@Url.Action("Details", new {id = Model.Id })">
             @Html.DisplayFor(modelItem => Model.Name)
         </a>
         
     </td>
-    <td class="noCellFlicker">
+    <td class="col-xs-1">
         @Html.DisplayFor(modelItem => Model.Genre)
     </td>
-    <td class="noCellFlicker">
+    <td class="col-xs-1">
+        @Html.DisplayFor(modelItem => Model.CountryOfOrigin)
+    </td>
+    <td class="col-xs-1">
+        @Html.DisplayFor(modelItem => Model.YearsActive)
+    </td>  
+    <td class="col-xs-1 text-right">
         @Html.DisplayFor(modelItem => Model.Likes)
-    </td>
-    <td class="noCellFlicker">
-        @Html.DisplayFor(modelItem => Model.Dislikes)
-    </td>
-    <td class="noCellFlicker">
+    </td> 
+    <td class="col-xs-1">
         @using (Ajax.BeginForm(
                                 actionName: "_Like",
                                 controllerName: "Home",
@@ -34,10 +37,15 @@
                                 }
                         ))
         {
-            <input id="likeButton" type="submit" value="Like" />
+            <input id="likeButton" type="submit" value="&#xf164" class="fa fa-input fa-2x btn btn-default">
         }
     </td>
-    <td class="noCellFlicker">
+    <td class="col-xs-1 text-right">
+        @Html.DisplayFor(modelItem => Model.Dislikes)
+        @*@Html.DisplayFor()*@
+        </td>
+<td class="col-xs-1">
+       
         @using (Ajax.BeginForm(
                                     actionName: "_Dislike",
                                     controllerName: "Home",
@@ -49,13 +57,8 @@
                                     }                                            
                             ))
         {
-            <input type="submit" value="Dislike" />
+            <input id="dislikeButton" type="submit" value="&#xf165" class="fa fa-input fa-lg btn btn-default">
         }
     </td>
-    @*<td>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
-    </td>*@
 </tr>
 
