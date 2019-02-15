@@ -11,7 +11,8 @@ body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     /*fix to stop background gradient repeating (also see html selector above) */
     /*source: https://stackoverflow.com/questions/2869212/css3-gradient-background-set-on-body-doesnt-stretch-but-instead-repeats */
-    background: linear-gradient(purple, #3333cc);
+    /*gradient colors: medium blue to light blue*/
+    background: linear-gradient(#1a1aff, #6666ff);
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
